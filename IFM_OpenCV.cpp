@@ -160,37 +160,15 @@ public:
 		return;
 	}
 
-	void sharpenImage(Mat &image) {
-		/*Mat temp;
-		GaussianBlur(image, temp, Size(0, 0), 3);
-		addWeighted(image, 1.5, temp, -0.5, 0, temp);
-		image = temp;*/
-		 //create 2 empty windows
-		namedWindow( "Original Image" , CV_WINDOW_AUTOSIZE );
-		namedWindow( "Smoothed Image" , CV_WINDOW_AUTOSIZE );
-
-		//show the loaded image
-		imshow( "Original Image", image );
-
-		Mat dst;
-		char zBuffer[35];
-
-		for ( int i = 1; i  <  31; i = i + 2 ) {
-			//smooth the image using Gaussian kernel in the "src" and save it to "dst"
-			GaussianBlur(image, dst, Size( i, i ), 0, 0);
-			addWeighted(image, 1.5, dst, -0.5, 0, dst);
-			//show the blurred image with the text
-			imshow( "Smoothed Image", dst );
-
-			//wait for 2 seconds
-			int c = waitKey(2000);
-
-			//if the "esc" key is pressed during the wait, return
-			if (c == 27)
-			{
-				return ;
-			}	
-		}
+	/**************************************************************************
+	* Used a sharpening filter on the original image.
+	* Source : https://en.wikipedia.org/wiki/Kernel_(image_processing)
+	**************************************************************************/
+	void sharpenImage(Mat &image) {	
+		Mat sharpened;
+		Mat kernel = (Mat_<float>(3, 3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
+		filter2D(image, sharpened, image.depth(), kernel);
+		image = sharpened;
 	}
 
 	void showImage(Mat &image) {
