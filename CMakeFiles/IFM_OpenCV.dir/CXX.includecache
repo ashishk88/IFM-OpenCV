@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ashish/cpp/IFM-OpenCV/IFM_OpenCV.cpp
+/home/ashish/Work/IFM-OpenCV/IFM_OpenCV.cpp
 iostream
 -
 opencv2/opencv.hpp

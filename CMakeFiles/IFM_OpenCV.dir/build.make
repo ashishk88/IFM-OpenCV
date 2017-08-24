@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ashish/cpp/IFM-OpenCV
+CMAKE_SOURCE_DIR = /home/ashish/Work/IFM-OpenCV
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ashish/cpp/IFM-OpenCV
+CMAKE_BINARY_DIR = /home/ashish/Work/IFM-OpenCV
 
 # Include any dependencies generated for this target.
 include CMakeFiles/IFM_OpenCV.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/IFM_OpenCV.dir/flags.make
 
 CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o: CMakeFiles/IFM_OpenCV.dir/flags.make
 CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o: IFM_OpenCV.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ashish/cpp/IFM-OpenCV/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ashish/Work/IFM-OpenCV/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o -c /home/ashish/cpp/IFM-OpenCV/IFM_OpenCV.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o -c /home/ashish/Work/IFM-OpenCV/IFM_OpenCV.cpp
 
 CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ashish/cpp/IFM-OpenCV/IFM_OpenCV.cpp > CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ashish/Work/IFM-OpenCV/IFM_OpenCV.cpp > CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.i
 
 CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ashish/cpp/IFM-OpenCV/IFM_OpenCV.cpp -o CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ashish/Work/IFM-OpenCV/IFM_OpenCV.cpp -o CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.s
 
 CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o.requires:
 .PHONY : CMakeFiles/IFM_OpenCV.dir/IFM_OpenCV.cpp.o.requires
@@ -126,6 +126,6 @@ CMakeFiles/IFM_OpenCV.dir/clean:
 .PHONY : CMakeFiles/IFM_OpenCV.dir/clean
 
 CMakeFiles/IFM_OpenCV.dir/depend:
-	cd /home/ashish/cpp/IFM-OpenCV && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ashish/cpp/IFM-OpenCV /home/ashish/cpp/IFM-OpenCV /home/ashish/cpp/IFM-OpenCV /home/ashish/cpp/IFM-OpenCV /home/ashish/cpp/IFM-OpenCV/CMakeFiles/IFM_OpenCV.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ashish/Work/IFM-OpenCV && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ashish/Work/IFM-OpenCV /home/ashish/Work/IFM-OpenCV /home/ashish/Work/IFM-OpenCV /home/ashish/Work/IFM-OpenCV /home/ashish/Work/IFM-OpenCV/CMakeFiles/IFM_OpenCV.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/IFM_OpenCV.dir/depend
 

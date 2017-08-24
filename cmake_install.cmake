@@ -1,4 +1,4 @@
-# Install script for directory: /home/ashish/cpp/IFM-OpenCV
+# Install script for directory: /home/ashish/Work/IFM-OpenCV
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/ashish/cpp/IFM-OpenCV/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/ashish/Work/IFM-OpenCV/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/ashish/cpp/IFM-OpenCV/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/ashish/Work/IFM-OpenCV/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
