@@ -84,8 +84,6 @@ private:
 	Mat image;
 	list<PrintedLabel> printedLabels;
 
-	int thresh = 50, N = 11;
-	const char* wndname = "Square Detection Demo";
 public:
 
 	/**************************************************************************
@@ -168,12 +166,28 @@ public:
 	* Source : https://en.wikipedia.org/wiki/Kernel_(image_processing)
 	**************************************************************************/
 	void sharpenImage(Mat &image) {	
+		Mat img_higher_contrast;
+		image.convertTo(img_higher_contrast, -1, 1.1, 0); 
+		
 		Mat sharpened;
 		Mat kernel = (Mat_<float>(3, 3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
-		filter2D(image, sharpened, image.depth(), kernel);
-		image = sharpened;
+		filter2D(img_higher_contrast, sharpened, img_higher_contrast.depth(), kernel);
+
+		kernel = (Mat_<float>(5, 5) << -1/8.0,-1/8.0,-1/8.0,-1/8.0,-1/8.0, 
+		-1/8.0,2/8.0,2/8.0,2/8.0,-1/8.0, 
+		-1/8.0,2/8.0,8/8.0,2/8.0,-1/8.0, 
+		-1/8.0,2/8.0,2/8.0,2/8.0,-1/8.0, 
+		-1/8.0,-1/8.0,-1/8.0,-1/8.0,-1/8.0);
+		filter2D(sharpened, image, sharpened.depth(), kernel);
+		
 		vector<vector<Point> > squares;
 		findSquares(image, squares);
+
+		vector<vector<Point> >::iterator it = squares.begin();
+		for(; it != squares.end(); ++it) {
+			vector<Point> points = *it;
+			Mat square = Mat(points.size(),2,CV_64F,points.data());
+		}
         drawSquares(image, squares);
 	}
 
@@ -205,10 +219,14 @@ public:
 		return (dx1*dx2 + dy1*dy2)/sqrt((dx1*dx1 + dy1*dy1)*(dx2*dx2 + dy2*dy2) + 1e-10);
 	}
 
-
-	// returns sequence of squares detected on the image.
-	// the sequence is stored in the specified memory storage
+	/**************************************************************************
+	* returns sequence of squares detected on the image.
+	* the sequence is stored in the specified memory storage
+	* Code taken from open cv samples
+	**************************************************************************/
 	void findSquares( const Mat& image, vector<vector<Point> >& squares ) {
+
+		const int thresh = 50, N = 11;
 		squares.clear();
 
 		Mat pyr, timg, gray0(image.size(), CV_8U), gray;
@@ -288,8 +306,12 @@ public:
 	}
 
 
-	// the function draws all the squares in the image
+	/**************************************************************************
+	* the function draws all the squares in the image
+	* Code taken from open cv samples
+	**************************************************************************/
 	void drawSquares( Mat& image, const vector<vector<Point> >& squares ) {
+		string wndname = "Square Detection Demo";
 		for( size_t i = 0; i < squares.size(); i++ )
 		{
 			const Point* p = &squares[i][0];
